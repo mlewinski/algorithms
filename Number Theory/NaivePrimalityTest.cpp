@@ -9,7 +9,8 @@ int main(){
     cin>>p;
     g = sqrt(p);
     bool f = true;
-    for(int i=2; i<=g; i++){
+    if(p%2==0) f=false;
+    for(int i=3; i<=g; i+=2){
         if(p%i==0){
             cout<<p<<" is not a prime number"<<endl;
             f = false;
