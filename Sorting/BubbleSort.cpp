@@ -6,9 +6,9 @@ using namespace std;
 
 void BubbleSort(int A[], int n)
 {
-    for(int i = 0; i<n; i++)
+    for(int i = n; i>0; i--)
     {
-        for(int j = 0; j<n-1; j++)
+        for(int j = 0; j<i; j++)
         {
             if(A[j]>A[j+1]) swap(A[j],A[j+1]);
         }
