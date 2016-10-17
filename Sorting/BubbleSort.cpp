@@ -6,12 +6,15 @@ using namespace std;
 
 void BubbleSort(int A[], int n)
 {
-    for(int i = n; i>0; i--)
+    bool p = true;
+    for(int i = n-1; i>0; i--)
     {
         for(int j = 0; j<i; j++)
         {
             if(A[j]>A[j+1]) swap(A[j],A[j+1]);
+            p = false;
         }
+        if(p) break;
     }
 
 }
