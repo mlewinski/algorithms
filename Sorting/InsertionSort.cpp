@@ -4,15 +4,18 @@
 
 using namespace std;
 
-void SelectionSort(int A[], int n)
+void InsertionSort(int A[], int n)
 {
-    int min = 0;
-    for(int i=0; i<n-1; i++){
-        min = i;
-        for(int j=i+1; j<n; j++){
-            if(A[j]<A[min]) min=j;
+    int x = 0;
+    int j = 0;
+    for(int i=n-2; i>=0; i--){
+        x = A[i];
+        j=i+1;
+        while((j<n) && (x>A[j])){
+            A[j-1]=A[j];
+            j++;
         }
-        swap(A[min], A[i]);
+        A[j-1]=x;
     }
 
 }
@@ -36,7 +39,7 @@ int main()
         tab[i]=rand()%10000;
     }
     DisplayTab(tab,n);
-    SelectionSort(tab, n);
+    InsertionSort(tab, n);
     DisplayTab(tab,n);
     return 0;
 }
